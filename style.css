@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --light-bg: #E8E8E8; /* rgb(232, 232, 232) */
+    --dark-bg: #242424; /* rgb(36, 36, 36) */
+    --dark-purple: #2D2C54; /* rgb(45, 44, 84) */
+    --light-purple: #474787; /* rgb(71, 71, 135) */
+    --light-card: #ECECEC; /* rgb(236, 236, 236) */
+}
+
+/*
+// #E8E8E8 == rgb(232, 232, 232)
+// #242424 == rgb(36, 36, 36)
+// #2D2C54 ==  rgb(45, 44, 84)
+// #474787 == rgb(71, 71, 135)
+// #ECECEC == rgb(236, 236, 236)
+*/
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ScrollBar Stylings */
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ScrollBar width */
+::-webkit-scrollbar {
+    width: 4.5px;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ScrollBar Track */
+::-webkit-scrollbar-track {
+    background: #ABAAB8;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ScrollBar Handle */
+::-webkit-scrollbar-thumb {
+    /* background: #888; */
+    background: var(--light-purple);
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ScrollBar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-purple);
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ENDS ScrollBar Stylings */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--light-bg);
+    transition: all .2s linear;
+}
+
+.main-section {
+    margin: auto;
+    max-width: 1440px;
+    min-height: 95vh;
+    /* background: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Dark Mode Container  */
+.dark-mode-cont {
+    width: 100%;
+    /* background-color: aquamarine; */
+    padding: 25px 0px 25px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#dark-mode-btn {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--dark-purple);
+    border: 0;
+    outline: 0;
+    border-radius: 30px;
+    transition: all .2s linear;
+}
+
+#dark-mode-btn i {
+    color: white;
+    font-size: 22px;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Heading  */
+h1 {
+    margin-top: -30px;
+    font-size: 44px;
+    font-family: Jost;
+    color: var(--dark-purple);
+    font-weight: 400;
+    transition: all .2s linear;
+}
+
+.searchBoxCont {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    /* background-color: yellowgreen; */
+}
+
+.searchBoxCont img {
+    max-width: 25px;
+    position: absolute;
+    margin-left: 15px;
+}
+
+#searchInp {
+    border: 2px solid var(--dark-purple);
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    outline: 0;
+    padding-left: 50px;
+    transition: all .4s linear;
+    background-color: transparent;
+    transition: all .2s linear;
+}
+
+#searchInp::placeholder {
+    color: #2D2C54;
+}
+
+#searchInp:focus {
+    box-shadow: 0px 0px 20px 1px #47478799;
+}
+
+.dkActiveSearchInp {
+    border: 2px solid var(--light-card) !important;
+    color: white;
+    transition: all .2s linear;
+}
+
+.dkActiveSearchInp::placeholder {
+    color: #ECECEC !important;
+}
+
+.dkActiveSearchInp:focus {
+    box-shadow: 0px 0px 12px 1px #ececec4d !important;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Quotes Container  */
+#cont {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 !important;
+    transition: all .2s linear;
+    /* background-color: aqua; */
+}
+
+.card {
+    min-height: 240px;
+    /* max-width: 400px; */
+    width: 31%;
+    box-shadow: 0px 4px 4px 0px #00000061;
+    background-color: var(--light-card);
+    transition: all .2s linear;
+    /* background-color: burlywood; */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 20px !important;
+}
+
+.card-title {
+    color: var(--dark-purple);
+    font-family: Jost;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
+}
+
+.card-text-cont {
+    margin-bottom: 0;
+    width: 100%;
+    position: relative;
+    right: 0 !important;
+    /* left: 80%; */
+    /* background: aquamarine; */
+    z-index: 99;
+}
+
+.card-text {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: var(--light-purple);
+    font-family: Jost;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> CSS Loaders */
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 3px solid #161616;
+    border-right: 3px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ENDS CSS Loaders */
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Scroll To Top Button */
+.scrollToTopBtn {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--light-purple);
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 1.6rem;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 0;
+    right: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .2s;
+}
+
+.scrollToTopBtn:active {
+    transform: scale(.82);
+}
+
+.active {
+    bottom: 2rem;
+    opacity: 1;
+    pointer-events: auto;
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ENDS Scroll To Top Button */
+
+
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Media Queries */
+
+@media (max-width: 1440px) {
+    #cont {
+        padding: 0 50px !important;
+    }
+
+    .searchBoxCont {
+        padding: 20px 50px !important;
+    }
+
+    .dark-mode-cont {
+        padding: 25px 50px 25px 0;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1439px) {
+    .card {
+        width: 31%;
+        min-height: 290px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .card {
+        width: 31%;
+        min-height: 330px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #cont {
+        padding: 0 30px !important;
+        justify-content: space-between;
+    }
+
+    .searchBoxCont {
+        padding: 20px 30px !important;
+    }
+
+    .dark-mode-cont {
+        padding: 25px 30px 25px 0;
+    }
+
+    .card {
+        min-height: 280px;
+        max-width: 47%;
+        width: 47%;
+    }
+}
+
+@media (min-width: 551px) and (max-width: 768px) {
+    #cont {
+        padding: 0 20px !important;
+    }
+
+    .searchBoxCont {
+        padding: 20px !important;
+    }
+
+    .dark-mode-cont {
+        padding: 25px 20px;
+    }
+
+    .card {
+        min-height: 280px;
+        max-width: 47% !important;
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        margin-top: -5px;
+        font-size: 30px;
+    }
+
+    .dark-mode-cont {
+        justify-content: center;
+    }
+
+    #cont {
+        padding: 0 20px !important;
+    }
+
+    .searchBoxCont {
+        padding: 20px !important;
+    }
+
+    .dark-mode-cont {
+        padding: 25px 20px;
+    }
+
+    .card {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+}
